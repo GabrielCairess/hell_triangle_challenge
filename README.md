@@ -30,22 +30,20 @@ and also for your reading easy and undestanding.
     * ruby 2.4.0p0
     * RSpec 3.6
 
-  For constructions is enough fork this project with the command:
-
+  For constructions is enough fork this project with the command
     ```
     git clone git@github.com:GabrielCairess/hell_triangle_challenge.git
     ```
 
   Then run
-
     ```
     ruby hell_triangle.rb
     ```
 
   For execute the program, and
-
     ```
     rspec hell_triangle_spec.rb
+    ```
 
   For execute the tests.
 
