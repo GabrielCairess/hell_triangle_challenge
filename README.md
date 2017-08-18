@@ -32,21 +32,15 @@ and also for your reading easy and undestanding.
 
   For constructions is enough fork this project with the command
 
-    ```
-    git clone git@github.com:GabrielCairess/hell_triangle_challenge.git
-    ```
+    $ git clone git@github.com:GabrielCairess/hell_triangle_challenge.git
 
   Then run
 
-    ```
-    ruby hell_triangle.rb
-    ```
+    $ ruby hell_triangle.rb
 
   For execute the program, and
 
-    ```
-    rspec hell_triangle_spec.rb
-    ```
+    $ rspec hell_triangle_spec.rb
 
   For execute the tests.
 
