@@ -3,7 +3,6 @@ require_relative '../hell_triangle.rb'
 
 RSpec.describe HellTriangle do
   let(:example) { [[6], [3, 5], [9, 7, 1], [4, 6, 8, 4]] }
-  let(:wrong_example) { [[6, 1], [3, 5], [9, 7, 1], [4, 6, 8, 4]] }
   let(:triangle) { HellTriangle.new(example) }
 
   it '.initialize' do

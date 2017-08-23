@@ -1,5 +1,5 @@
 class HellTriangle
-  attr_accessor :example
+  attr_reader :example
 
   def initialize(example)
     @example = example
