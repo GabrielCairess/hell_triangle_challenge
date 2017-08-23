@@ -5,7 +5,7 @@ class HellTriangle
     @example = example
   end
 
-  def return_array_of_max(example)
+  def return_max_result(example)
     max_numbers = []
     example.each do |ex|
       if ex.size == 1
