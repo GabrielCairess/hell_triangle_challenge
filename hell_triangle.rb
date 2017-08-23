@@ -6,26 +6,26 @@ class HellTriangle
   end
 
   def return_array_of_max(example)
-    array_of_max = []
+    max_numbers = []
     example.each do |ex|
       if ex.size == 1
         max = ex[0]
         @previous_position = return_index(ex, max)
-        array_of_max.push(max)
+        max_numbers.push(max)
         next
       end
       max = return_max(ex[@previous_position], ex[@previous_position + 1])
       @previous_position = return_index(ex, max)
-      array_of_max.push(max)
+      max_numbers.push(max)
     end
-    final_result(array_of_max)
+    final_result(max_numbers)
   end
 
   def return_max(n1, n2)
-    array = []
-    array.push(n1)
-    array.push(n2)
-    array.max
+    numbers = []
+    numbers.push(n1)
+    numbers.push(n2)
+    numbers.max
   end
 
   def return_index(numbers, n)
