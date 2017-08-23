@@ -1,72 +1,27 @@
 require 'rspec'
-require_relative '../hell_triangle'
+require_relative '../hell_triangle.rb'
 
 RSpec.describe HellTriangle do
-  describe '.selected_max' do
-    context 'with success' do
-      it 'returns the max number of the sums' do
-        expect(HellTriangle.selected_max(1, 2, 3)).to eq(4)
-      end
-    end
+  let(:example) { [[6], [3, 5], [9, 7, 1], [4, 6, 8, 4]] }
+  let(:triangle) { HellTriangle.new(example) }
 
-    context 'without success' do
-      it 'do not returns the min number of the sums' do
-        expect(HellTriangle.selected_max(1, 2, 3)).to_not eq(3)
-      end
-    end
+  it '.initialize' do
+    expect(triangle.example).to eq(example)
   end
 
-  describe '.sum_nodes' do
-    context 'with success' do
-      it 'returns the result of the sum' do
-        expect(HellTriangle.sum_nodes(1, 2)).to eq(3)
-      end
-    end
-
-    context 'without success' do
-      it 'do not returns a wrong result of the sum' do
-        expect(HellTriangle.sum_nodes(1, 2)).to_not eq(4)
-      end
-    end
+  it '.return_max' do
+    expect(triangle.return_max(triangle.example[1][0], triangle.example[1][1])).to eq(5)
   end
 
-  describe '.calcule_node' do
-    context 'with success' do
-      it 'returns the result of the sum without params nil' do
-        expect(HellTriangle.calcule_node(1, 2, 3)).to eq(4)
-      end
-
-      it 'returns the result of the sum with the second params nil' do
-        expect(HellTriangle.calcule_node(1, nil, 3)).to eq(4)
-      end
-
-      it 'returns the result of the sum with the third params nil' do
-        expect(HellTriangle.calcule_node(1, 2, nil)).to eq(3)
-      end
-
-      it 'returns the first params' do
-        expect(HellTriangle.calcule_node(1, nil, nil)).to eq(1)
-      end
-    end
-
-    context 'without success' do
-      it 'returns a wrong result of the calculation' do
-        expect(HellTriangle.calcule_node(1, 2, 3)).to_not eq(5)
-      end
-    end
+  it '.return_index' do
+    expect(triangle.return_index(triangle.example[1], 3)).to eq(0)
   end
 
-  describe '.calcule_max' do
-    context 'with success' do
-      it 'returns the max number from top to bottom' do
-        expect(HellTriangle.calcule_max([[6], [3, 5], [9, 7, 1], [4, 6, 8, 4]])).to eq(26)
-      end
-    end
+  it '.return_array_of_max' do
+    expect(triangle.return_array_of_max(example)).to eq(26)
+  end
 
-    context 'without success' do
-      it 'returns wrong number' do
-        expect { HellTriangle.calcule_max([[6, 4], [3, 5], [9, 7, 1], [4, 6, 8, 4]]) }.to raise_error(RuntimeError, 'The number of the first array is wrong!')
-      end
-    end
+  it '.final_result' do
+    expect(triangle.final_result([6, 5, 7, 8])).to eq(26)
   end
 end

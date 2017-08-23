@@ -40,7 +40,7 @@ and also for your reading easy and undestanding.
 
   For execute the program, and
 
-    $ rspec hell_triangle_spec.rb
+    $ rspec spec/hell_triangle_spec.rb
 
   For execute the tests.
 
